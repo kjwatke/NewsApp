@@ -26,6 +26,26 @@ class ViewController: UIViewController {
 		model.delegate = self
 		model.getArticles()
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		
+		// Detect the index the user selected
+		let indexPath = tableView.indexPathForSelectedRow
+		
+		guard indexPath != nil else { return  }
+		
+		// Get the article the user tapped on
+		let article = articles[indexPath!.row]
+		
+		// Get a reference to the detail view controller
+		let detailVC = segue.destination as! DetailViewController
+		
+		// Pass the article URL to the detail view controller
+		detailVC.articleURL = article.url!
+		print("article: \(article.url)")
+		
+		
+	}
 }
 
 // MARK: - ArticleModel Delegate Methods
@@ -72,6 +92,13 @@ extension ViewController: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		
+	}
+	
+	
+	func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+		
+		// User has just selected a row, trigger the segue to go to detail
+		performSegue(withIdentifier: "goToDetail", sender: self)
 	}
 }
 

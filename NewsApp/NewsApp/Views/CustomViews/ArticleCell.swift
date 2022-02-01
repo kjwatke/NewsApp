@@ -38,6 +38,13 @@ class ArticleCell: UITableViewCell {
 		// Create the URL String
 		let urlString = articleToDisplay!.urlToImage!
 		
+		// Check the cachemanager before downloading any image data
+		if let imageData = CacheManager.retrieveData(urlString) {
+			
+			// There is image data, set the imageView and return
+			articleImageView.image = UIImage(data: imageData)
+		}
+		
 		// Create the url
 		let url = URL(string: urlString)
 		
@@ -52,6 +59,9 @@ class ArticleCell: UITableViewCell {
 			
 			// Check that there is no error
 			if error == nil && data != nil {
+				
+				// Save the data into cache
+				CacheManager.saveData(urlString, data!)
 				
 				// Check if the url string that the data task went off to download matches the article this cell is set to display
 				if self.articleToDisplay!.urlToImage == urlString {
