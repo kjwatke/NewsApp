@@ -17,6 +17,7 @@
 		348702EA27A8B2F70010C261 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348702E927A8B2F70010C261 /* ArticleService.swift */; };
 		348702EC27A8B35E0010C261 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348702EB27A8B35E0010C261 /* ArticleModel.swift */; };
 		348702EE27A8C2390010C261 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348702ED27A8C2390010C261 /* DetailViewController.swift */; };
+		348702F027A8C9FA0010C261 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348702EF27A8C9FA0010C261 /* ArticleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		348702E927A8B2F70010C261 /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
 		348702EB27A8B35E0010C261 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		348702ED27A8C2390010C261 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		348702EF27A8C9FA0010C261 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				348702D527A889500010C261 /* Main.storyboard */,
 				348702DA27A889520010C261 /* LaunchScreen.storyboard */,
+				348702F127A8CA000010C261 /* CustomViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,6 +112,14 @@
 				348702ED27A8C2390010C261 /* DetailViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		348702F127A8CA000010C261 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				348702EF27A8C9FA0010C261 /* ArticleCell.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348702F027A8C9FA0010C261 /* ArticleCell.swift in Sources */,
 				348702EA27A8B2F70010C261 /* ArticleService.swift in Sources */,
 				348702E627A88AA50010C261 /* Article.swift in Sources */,
 				348702D427A889500010C261 /* ViewController.swift in Sources */,
